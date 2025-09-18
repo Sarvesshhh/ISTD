@@ -130,6 +130,16 @@ body {
     font-weight: var(--font-bold);
 }
 
+.logo img {
+    height: 50px;
+    width: auto;
+    transition: all var(--transition-medium);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
 .logo i {
     color: var(--secondary-color);
     margin-right: var(--spacing-xs);
