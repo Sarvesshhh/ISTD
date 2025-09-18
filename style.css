@@ -36,7 +36,7 @@ body {
     --font-bold: 700;
     
     /* Spacing */
-    --spacing-xs: 0.5rem;
+    --spacing-xs: 0.2rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 3rem;
@@ -119,15 +119,24 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-sm);
+    gap : var(--spacing-xs);
+    padding: 0 var(--spacing-xs);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo h2 {
+    display: flex;           /* puts image and text in one line */
+    align-items: center;     /* vertically center text and image */
+    gap: 8px;                /* space between image and text */
     color: var(--primary-color);
     font-weight: var(--font-bold);
+}
+
+.logo-img {
+    width: 30px;             /* keep your logo size */
+    height: auto;
 }
 
 .logo i {
@@ -403,6 +412,8 @@ body {
 /* ===== ABOUT PAGE STYLES ===== */
 .about-hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, #1a2747 100%);
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
     padding: 120px 0 60px;
     text-align: center;
     color: var(--white);
@@ -454,28 +465,43 @@ body {
 
 .stats {
     display: flex;
-    gap: var(--spacing-md);
+    justify-content: center;     /* center the two blocks */
+    gap: var(--spacing-lg);      /* space between blocks */
     margin-top: var(--spacing-lg);
+    margin-left: var(--spacing-lg);
+    margin-right: var(--spacing-lg);
 }
 
 .stat-item {
     text-align: center;
+    flex: 1; 
 }
 
 .stat-item h3 {
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
     font-weight: var(--font-bold);
     color: var(--secondary-color);
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: 0px;
+    padding-right: var(--spacing-xs);
+    padding-left: var(--spacing-xs);
 }
 
 .stat-item p {
+    align-items: center;
+    justify-content: center;
+    margin-bottom:0;
     color: var(--dark-gray);
     font-weight: var(--font-medium);
+    padding-right: var(--spacing-xs);
+    padding-left: var(--spacing-xs);
 }
 
 /* Mission Section */
 .mission {
+    display: flex;
+    justify-content: center;
     background-color: var(--light-gray);
     padding: var(--spacing-xl) 0;
 }
@@ -782,6 +808,8 @@ body {
     }
     
     .about-text h2 {
+        display: flex;
+        justify-content: center;
         font-size: 2rem;
     }
 }
