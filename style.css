@@ -113,7 +113,7 @@ body {
 }
 
 .navbar {
-    padding: var(--spacing-sm) 0;
+    margin: var(--spacing-sm) 0;
 }
 
 .nav-container {
@@ -145,6 +145,7 @@ body {
 
 .nav-menu {
     display: flex;
+    justify-content: center;
     list-style: none;
     gap: var(--spacing-md);
 }
@@ -411,8 +412,6 @@ body {
 /* ===== ABOUT PAGE STYLES ===== */
 .about-hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, #1a2747 100%);
-    padding-top: var(--spacing-md);
-    padding-bottom: var(--spacing-sm);
     padding: 120px 0 60px;
     text-align: center;
     color: var(--white);
@@ -421,7 +420,7 @@ body {
 .about-hero h1 {
     font-size: 3rem;
     font-weight: var(--font-bold);
-    margin-bottom: var(--spacing-sm);
+    margin: var(--spacing-sm);
 }
 
 .about-hero p {
@@ -466,9 +465,7 @@ body {
     display: flex;
     justify-content: center;     /* center the two blocks */
     gap: var(--spacing-lg);      /* space between blocks */
-    margin-top: var(--spacing-lg);
-    margin-left: var(--spacing-lg);
-    margin-right: var(--spacing-lg);
+    margin: 0 auto;
 }
 
 .stat-item {
@@ -621,13 +618,13 @@ body {
 .footer-section h3 {
     color: var(--secondary-color);
     font-size: 1.5rem;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .footer-section h4 {
     color: var(--white);
-    font-size: 1.2rem;
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
 }
 
 .footer-section p {
@@ -662,6 +659,7 @@ body {
 
 .footer-section ul {
     list-style: none;
+    margin-bottom: var(--spacing-sm);
 }
 
 .footer-section ul li {
