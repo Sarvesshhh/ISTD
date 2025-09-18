@@ -63,8 +63,11 @@
                 
                 <!-- About Text -->
                 <div class="about-text">
-                    <h2></h2>
-                    <h3>ISTD Established in April 1970</h3>
+                    <div class="about-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Since 1970</span>
+                    </div>
+                    <h2>Our Story</h2>
                     <p>The Indian Society for Training & Development, established in April 1970, is a national level professional & non-profit society registered under the Societies Registration Act, 1860. It has a large membership of individuals and institutions involved in the area of training and development of Human Resource from Government, Public and Private Sector Organizations & Enterprises; Educational and Training Institutions and other Professional Bodies. The Society is affiliated to the International Federation of Training and Development Organizations (IFTDO), Geneva. ISTD Organizes Training Programs, all over the country both at Chapter and National Levels. “Visit our ISTD National Chapter Website "
 
                         </p>
@@ -82,6 +85,50 @@
                             <p>Years Active </p> 
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Achievements</h2>
+                <p>Milestones that define our journey</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>600+</h3>
+                    <p>Active Members</p>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>50+</h3>
+                    <p>Events Organized</p>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>25+</h3>
+                    <p>Awards Won</p>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>15+</h3>
+                    <p>Industry Partners</p>
                 </div>
             </div>
         </div>
@@ -151,8 +198,8 @@ Foster a collaborative environment where expertise and best practices can be exc
             <div class="footer-content">
                 <!-- Company Info -->
                 <div class="footer-section">
-                    <h3>ISTD</h3>
-                    <p>Empowering learners worldwide with quality training and empowerment</p>
+                    <h3>ISTD SVCE</h3>
+                    <p>Empowering learners worldwide with quality training and development programs.</p>
                     <div class="social-icons">
                         <a  href="https://www.instagram.com/istd_svce/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a  href="https://www.linkedin.com/in/istd-student-chapter-svce-281b53378" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -165,19 +212,61 @@ Foster a collaborative environment where expertise and best practices can be exc
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        
+                        <li><a href="office-bearers.html">Our Team</a></li>
                     </ul>
                 </div>
                 
-                
-                
-               
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Get In Touch</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>istd@svce.ac.in</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>SVCE Campus, Chennai</span>
+                    </div>
+                </div>
+            </div>
             
             <!-- Copyright -->
             <div class="footer-bottom">
-                <p>&copy; 2025 ISTD. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 ISTD Student Chapter SVCE. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
