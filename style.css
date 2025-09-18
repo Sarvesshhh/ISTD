@@ -131,13 +131,18 @@ body {
 }
 
 .logo img {
-    height: 50px;
+    height: 65px;
     width: auto;
     transition: all var(--transition-medium);
+    filter: brightness(1.1) contrast(1.05);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: brightness(1.2) contrast(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .logo i {
