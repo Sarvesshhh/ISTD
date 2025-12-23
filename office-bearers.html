@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - ISTD STUDENT CHAPTER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.jpeg">
+
+    <!-- Extra CSS for the Team Category Carousel -->
+    <style>
+      .team-carousel {
+        padding: 3rem 0;
+      }
+
+      .carousel-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .carousel-header h2 {
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      .carousel-subtitle {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #6b7280;
+      }
+
+      .carousel-btn {
+        border: none;
+        background: #111827;
+        color: #fff;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel-slides {
+        position: relative;
+      }
+
+      .team-slide {
+        display: none;
+      }
+
+      .team-slide.active {
+        display: block;
+      }
+
+      .team-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 640px) {
+        .team-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .team-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <h2><img src="logo istd.png" width="30px">ISTD SVCE</h2>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="office-bearers.html" class="nav-link active">Team</a></li>
+                </ul>
+                
+                <!-- Login/Register Button -->
+                <div class="nav-auth">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRsC36hTGEc2zp6ab-bjyHrwX-BSzjoa00LbCmTZGz6ORlgA/viewform?usp=sharing&ouid=100901410467440819661" target="_blank">
+                        <button class="auth-btn">Login / Register</button>
+                    </a> 
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Team Hero Section -->
+    <section class="team-hero">
+      <div class="container">
+        <h1>Meet Our Team</h1>
+        <p>Passionate leaders driving innovation and excellence in student development</p>
+      </div>
+    </section>
+
+    <!-- TEAM CATEGORY CAROUSEL (slides between Core / Event / Design / etc.) -->
+    <section class="team-carousel">
+      <div class="container">
+        <div class="carousel-header">
+          <button class="carousel-btn prev-category">&#10094;</button>
+          <h2 id="team-category-title">Core Team</h2>
+          <button class="carousel-btn next-category">&#10095;</button>
+        </div>
+        <p class="carousel-subtitle" id="team-category-subtitle">
+          Dedicated individuals committed to empowering students and fostering growth
+        </p>
+
+        <div class="carousel-slides">
+          <!-- Slide 1: Core Team -->
+          <div class="team-slide active" data-category="Core Team"
+               data-subtitle="Dedicated individuals committed to empowering students and fostering growth">
+            <div class="team-grid">
+              <!-- Core 1 -->
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Sriram A - President.jpeg" alt="Sriram A">
+                  <div class="social-overlay">
+                    <div class="social-links">
+                      <a href="" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>Sriram A</h3>
+                  <p class="position">President</p>
+                  <p class="description">Leading the chapter with vision and dedication to student excellence.</p>
+                </div>
+              </div>
+
+              <!-- Core 2 -->
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="VANDHANAA DEVI D R VICE-PRESIDENT.jpg" alt="Vandhana Devi R">
+                  <div class="social-overlay">
+                    <div class="social-links">
+                      <a href="" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>Vandhana Devi R</h3>
+                  <p class="position">Vice President</p>
+                  <p class="description">Supporting initiatives and fostering collaborative learning environments.</p>
+                </div>
+              </div>
+
+              <!-- Core 3 -->
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="JOHN BELLARMINE G A GENERAL SECRETARY .jpg" alt="John Bellarmine G A">
+                  <div class="social-overlay">
+                    <div class="social-links">
+                      <a href="" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>John Bellarmine G A</h3>
+                  <p class="position">General Secretary</p>
+                  <p class="description">Managing communications and ensuring smooth operations.</p>
+                </div>
+              </div>
+
+              <!-- Core 4 -->
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Srinath S - General Secretary.jpg" alt="Srinath S">
+                  <div class="social-overlay">
+                    <div class="social-links">
+                      <a href="" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>Srinath S</h3>
+                  <p class="position">General Secretary</p>
+                  <p class="description">Managing communications and ensuring smooth operations.</p>
+                </div>
+              </div>
+
+              <!-- Core 5 -->
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Thamizh Selvan A - Joint Sec.jpg" alt="Thamizh Selvan A">
+                  <div class="social-overlay">
+                    <div class="social-links">
+                      <a href="" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>Thamizh Selvan A</h3>
+                  <p class="position">Joint Secretary</p>
+                  <p class="description">Managing communications and ensuring smooth operations.</p>
+                </div>
+              </div>
+
+              <!-- Core 6 -->
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Dakxin Shaswath Haran Y _ Joint secretary .jpg" alt="Dakxin Shaswath Haran Y">
+                  <div class="social-overlay">
+                    <div class="social-links">
+                      <a href="" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>Dakxin Shaswath Haran Y</h3>
+                  <p class="position">Joint Secretary</p>
+                  <p class="description">Managing communications and ensuring smooth operations.</p>
+                </div>
+              </div>
+
+              <!-- Core 7 -->
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="sudarshan.jpeg.png" alt="Sudarshan">
+                  <div class="social-overlay">
+                    <div class="social-links">
+                      <a href="" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>Sudarshan</h3>
+                  <p class="position">Assistant Treasurer</p>
+                  <p class="description">Building brand awareness and managing digital presence.</p>
+                </div>
+              </div>
+
+              <!-- Core 8 -->
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Yuva Sree R - treasurer.jpeg" alt="Yuva Sree R">
+                  <div class="social-overlay">
+                    <div class="social-links">
+                      <a href="" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>Yuva Sree R</h3>
+                  <p class="position">Treasurer</p>
+                  <p class="description">Managing finances and ensuring transparent resource allocation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Event Executives (5) -->
+          <div class="team-slide"
+               data-category="Event Executives"
+               data-subtitle="Driving impactful events and experiences for students">
+            <div class="team-grid">
+              <!-- 5 cards – replace with real names/images -->
+              <div class="team-member"> 
+                <div class="member-photo">
+                  <img src="event-exec-1.jpg" alt="Event Executive 1">
+                </div>
+                <div class="member-info">
+                  <h3>Prashant</h3>
+                  <p class="position">lead Event Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Mahathi T - Event Executive.jpeg" alt="Mahathi T">
+                </div>
+                <div class="member-info">
+                  <h3>Mahathi T</h3>
+                  <p class="position">Event Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Sri Hari Roshan N IMG-20250913-WA0091.jpeg" alt="Sri hari roshan N">
+                </div>
+                <div class="member-info">
+                  <h3>Sri hari roshan N </h3>
+                  <p class="position">Event Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="P.RASIGA - EVENT EXECUTIVE.jpeg" alt="P Rasiga">
+                </div>
+                <div class="member-info">
+                  <h3>P Rasiga </h3>
+                  <p class="position">Event Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="event-exec-5.jpg" alt="Shantosh">
+                </div>
+                <div class="member-info">
+                  <h3>Shantosh </h3>
+                  <p class="position">Event Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Design Executives (5) -->
+          <div class="team-slide"
+               data-category="Design Executives"
+               data-subtitle="Creating visual impact and compelling designs">
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="design-exec1.jpeg" alt="Harikirshnan">
+                </div>
+                <div class="member-info">
+                  <h3>Harikirshnan </h3>
+                  <p class="position">Lead Design Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="design-exec-2.jpg" alt="Design Executive 2">
+                </div>
+                <div class="member-info">
+                  <h3>visvajith </h3>
+                  <p class="position">Design Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="ramkumar.jpg" alt="Ramkumar R">
+                </div>
+                <div class="member-info">
+                  <h3>Ramkumar R</h3>
+                  <p class="position">Design Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="PalanikumarS.jpeg" alt="Palanikumar S">
+                </div>
+                <div class="member-info">
+                  <h3>Palanikumar S</h3>
+                  <p class="position">Design Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="divyadharshini S.jpeg" alt="Divyadarshini S">
+                </div>
+                <div class="member-info">
+                  <h3>Divyadarshini S</h3>
+                  <p class="position">Design Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Tech Executives (5) -->
+          <div class="team-slide"
+               data-category="Tech Executives"
+               data-subtitle="Driving technological innovation and platform stability">
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="tech executive 1 " alt="Sarvesh Vaidhi">
+                </div>
+                <div class="member-info">
+                  <h3>Sarvesh Vaidhi</h3>
+                  <p class="position">Lead Tech Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Dinesh karthik - Tech Executive.jpeg" alt="Dinesh Karthick">
+                </div>
+                <div class="member-info">
+                  <h3>Dinesh Karthick</h3>
+                  <p class="position">Tech Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="N RAHUL TECH EXECUTIVE .jpeg" alt="N Rahul">
+                </div>
+                <div class="member-info">
+                  <h3>N Rahul</h3>
+                  <p class="position">Tech Executive</p>
+                  <p class="description">short description</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Mrithylesh D Tech Executive.jpeg" alt="Mrithylesh ">
+                </div>
+                <div class="member-info">
+                  <h3>Mrithylesh D</h3>
+                  <p class="position">Tech Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="tech-exec-5.jpg" alt="siddharth Naren">
+                </div>
+                <div class="member-info">
+                  <h3>Siddharth Naren</h3>
+                  <p class="position">Tech Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5: Content Executives (5) -->
+          <div class="team-slide"
+               data-category="Content Executives"
+               data-subtitle="Crafting engaging communication and narratives">
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="ABIRAMI RM.jpeg" alt="Abirami RM">
+                </div>
+                <div class="member-info">
+                  <h3>Abirami RM</h3>
+                  <p class="position">Lead Content Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="HARSHITH .jpeg" alt="Harshith">
+                </div>
+                <div class="member-info">
+                  <h3>Harshith </h3>
+                  <p class="position">Content Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="JAHNAVI G.jpeg" alt="Jahnavi G">
+                </div>
+                <div class="member-info">
+                  <h3>Jahnavi G</h3>
+                  <p class="position">Content Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Irfanaa Parveen M .jpeg" alt="Irfanaa Parveen M">
+                </div>
+                <div class="member-info">
+                  <h3>Irfanaa Parveen M</h3>
+                  <p class="position">Content Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="SRI RAMANA KISHORE K .jpeg" alt="Sri ramama kishore K">
+                </div>
+                <div class="member-info">
+                  <h3>Sri ramama kishore K</h3>
+                  <p class="position">Content Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6: Dept Coordinators (10) -->
+          <div class="team-slide"
+               data-category="Dept Coordinators"
+               data-subtitle="Coordinating activities across departments">
+            <div class="team-grid">
+              <!-- 10 similar cards -->
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="dhanwanth.jpg" alt="Dhanwanth">
+                </div>
+                <div class="member-info">
+                  <h3>Dhanwanth</h3>
+                  <p class="position">Lead discipline committee</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Indhumathi - Dept Coordinator(CS).jpeg" alt="Indhumathi">
+                </div>
+                <div class="member-info">
+                  <h3>Indhumathi </h3>
+                  <p class="position">Dept Coordinator</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="hemanth.jpg" alt="Hemanth B">
+                </div>
+                <div class="member-info">
+                  <h3>Hemanth B</h3>
+                  <p class="position">Dept Coordinator</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="snehaa dept coordinator ad.jpeg" alt="Snehaa">
+                </div>
+                <div class="member-info">
+                  <h3>Snehaa </h3>
+                  <p class="position">Dept Coordinator</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Sudesh Pillai ECE .jpeg" alt="Sudesh pillai">
+                </div>
+                <div class="member-info">
+                  <h3>Sudesh pillai </h3>
+                  <p class="position">Dept Coordinator</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Vaseekaran S,EEE.jpeg" alt="Vaseekaran S">
+                </div>
+                <div class="member-info">
+                  <h3>Vaseekaran S</h3>
+                  <p class="position">Dept Coordinator</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="ashish jude.jpg" alt="Ashish Jude">
+                </div>
+                <div class="member-info">
+                  <h3>Ashish Jude</h3>
+                  <p class="position">Dept Coordinator</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="madhav.ba, mech.jpeg" alt="Madhan BA">
+                </div>
+                <div class="member-info">
+                  <h3>Madhav BA</h3>
+                  <p class="position">Dept Coordinator</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="kavya.jpeg" alt="kaviya S">
+                </div>
+                <div class="member-info">
+                  <h3>kaviya S</h3>
+                  <p class="position">Dept Coordinator</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Bhavadhaarini Civil .jpeg" alt="Bhavadhaarini">
+                </div>
+                <div class="member-info">
+                  <h3>Bhavadhaarini</h3>
+                  <p class="position">Dept Coordinator</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 7: Outreach Executives (5) -->
+          <div class="team-slide"
+               data-category="Outreach Executives"
+               data-subtitle="Building partnerships and external relations">
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="outreach-exec-1.jpg" alt="Sai vignesh">
+                </div>
+                <div class="member-info">
+                  <h3>Sai vignesh</h3>
+                  <p class="position">Lead Outreach Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Anushri V.jpeg" alt="Anushri V">
+                </div>
+                <div class="member-info">
+                  <h3>Anushri V</Var></h3>
+                  <p class="position">Outreach Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="PREM KUMAR M .jpeg" alt="Prem kumar M">
+                </div>
+                <div class="member-info">
+                  <h3>Prem kumar M </h3>
+                  <p class="position">Outreach Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Sandhiya G.jpeg" alt="Sandhiya G">
+                </div>
+                <div class="member-info">
+                  <h3>Sandhiya G</h3>
+                  <p class="position">Outreach Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="dimple.jpeg" alt="Dimple Kurugunda">
+                </div>
+                <div class="member-info">
+                  <h3>Dimple Kurugunda</h3>
+                  <p class="position">Outreach Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 8: Documentation Executives (2) -->
+          <div class="team-slide"
+               data-category="Documentation Executives"
+               data-subtitle="Maintaining records and documentation of all activities">
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="Shachindra RJ - Lead Document Executive.jpeg" alt="Shachindra RJ">
+                </div>
+                <div class="member-info">
+                  <h3>Shachindra RJ</h3>
+                  <p class="position">Lead Documentation Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <div class="member-photo">
+                  <img src="documentation-exec-2.jpg" alt="Sanjay">
+                </div>
+                <div class="member-info">
+                  <h3>Sanjay </h3>
+                  <p class="position">Documentation Executive</p>
+                  <p class="description">Short description.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3>ISTD SVCE</h3>
+                    <p>Empowering learners worldwide with quality training and development programs.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/istd_svce/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/istd-student-chapter-svce-281b53378" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="office-bearers.html">Our Team</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Get In Touch</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>istd@svce.ac.in</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 89409 63521</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>SVCE Campus, Chennai</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 ISTD Student Chapter SVCE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // CATEGORY SLIDER (between Core / Event / Design / Tech / etc.)
+        document.addEventListener('DOMContentLoaded', function () {
+          const slides = Array.from(document.querySelectorAll('.team-slide'));
+          if (!slides.length) return;
+
+          const titleEl = document.getElementById('team-category-title');
+          const subtitleEl = document.getElementById('team-category-subtitle');
+          const prevCatBtn = document.querySelector('.prev-category');
+          const nextCatBtn = document.querySelector('.next-category');
+
+          let currentIndex = 0;
+
+          function updateCategorySlide(index) {
+            slides.forEach((slide, i) => {
+              slide.classList.toggle('active', i === index);
+            });
+
+            const activeSlide = slides[index];
+            const category = activeSlide.getAttribute('data-category') || '';
+            const subtitle = activeSlide.getAttribute('data-subtitle') || '';
+
+            if (titleEl) titleEl.textContent = category;
+            if (subtitleEl) subtitleEl.textContent = subtitle;
+          }
+
+          if (prevCatBtn && nextCatBtn) {
+            prevCatBtn.addEventListener('click', () => {
+              currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+              updateCategorySlide(currentIndex);
+            });
+
+            nextCatBtn.addEventListener('click', () => {
+              currentIndex = (currentIndex + 1) % slides.length;
+              updateCategorySlide(currentIndex);
+            });
+          }
+
+          // Initialize first slide
+          updateCategorySlide(currentIndex);
+        });
+    </script>
+</body>
+</html>
