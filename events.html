@@ -30,6 +30,37 @@
             margin: 0 auto;
         }
 
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+        }
+
         .events-section {
             padding: 4rem 0;
             background: var(--light-gray);
@@ -94,6 +125,35 @@
             font-size: 0.85rem;
             font-weight: var(--font-semibold);
             z-index: 1;
+        }
+
+        .event-category {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-networking {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .category-personality {
+            background: #fce7f3;
+            color: #be185d;
+        }
+
+        .category-financial {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .category-career {
+            background: #fef3c7;
+            color: #92400e;
         }
 
         .event-content {
@@ -336,6 +396,10 @@
         <div class="container">
             <h1>Our Events</h1>
             <p>Explore our past events, workshops, and monthly meetups that shape our community</p>
+            <div class="filter-container">
+                <button class="filter-btn" onclick="filterEvents('2024-2025')">2024-2025</button>
+                <button class="filter-btn active" onclick="filterEvents('2025-2026')">2025-2026</button>
+            </div>
         </div>
     </section>
 
@@ -344,16 +408,97 @@
         <div class="container">
             <div class="events-grid">
                 
+                <!-- 2024-2025 Events -->
+                <!-- Event: Building and Leveraging a Personal Network -->
+                <div class="event-card" data-year="2024-2025" data-category="networking" onclick="openPDF('event reports/Building and Leveraging a Personal Network with Workplace Etiquette 2024-2025.pdf')">
+                    <div class="event-image" style="background: linear-gradient(135deg, #396afc 0%, #2948ff 100%);">
+                        <i class="fas fa-handshake"></i>
+                        <span class="event-badge">Workshop</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category category-networking">Networking</span>
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2024-2025</span>
+                        </div>
+                        <h3 class="event-title">Building and Leveraging a Personal Network</h3>
+                        <p class="event-description">
+                            A comprehensive workshop on building professional networks and mastering workplace etiquette for career success.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>View Report</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event: SpeakUp Showdown -->
+                <div class="event-card" data-year="2024-2025" data-category="personality" onclick="openPDF('event reports/SpeakUp Showdown report 2024-2025.pdf')">
+                    <div class="event-image" style="background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);">
+                        <i class="fas fa-microphone"></i>
+                        <span class="event-badge">Competition</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category category-personality">Personality Development</span>
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2024-2025</span>
+                        </div>
+                        <h3 class="event-title">SpeakUp Showdown</h3>
+                        <p class="event-description">
+                            An engaging public speaking competition designed to enhance communication skills and build confidence in expressing ideas effectively.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>View Report</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Meets Card 2024-2025 -->
+                <div class="event-card monthly-meet-card" data-year="2024-2025" data-category="networking" onclick="showMonthlyMeets2024()">
+                    <div class="event-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <i class="fas fa-users"></i>
+                        <span class="event-badge">Regular</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category category-networking">Networking</span>
+                        <div class="event-date">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Monthly Series 2024-2025</span>
+                        </div>
+                        <h3 class="event-title">Monthly Meets</h3>
+                        <p class="event-description">
+                            Regular monthly gatherings bringing together our community for knowledge sharing, networking, and collaborative learning experiences.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-folder-open"></i>
+                                <span>View All Reports</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025-2026 Events -->
                 <!-- Event 1: Data Analyst Online Event -->
-                <div class="event-card" onclick="openPDF('event reports/DATA ANALYST ONLINE EVENT.pdf')">
+                <div class="event-card" data-year="2025-2026" data-category="career" onclick="openPDF('event reports/DATA ANALYST ONLINE EVENT 2025-2026.pdf')">
                     <div class="event-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                         <i class="fas fa-chart-line"></i>
                         <span class="event-badge">Workshop</span>
                     </div>
                     <div class="event-content">
+                        <span class="event-category category-career">Career Development</span>
                         <div class="event-date">
                             <i class="fas fa-calendar-alt"></i>
-                            <span>2025</span>
+                            <span>2025-2026</span>
                         </div>
                         <h3 class="event-title">Data Analyst Online Event</h3>
                         <p class="event-description">
@@ -370,15 +515,16 @@
                 </div>
 
                 <!-- Event 2: Beyond Books Event -->
-                <div class="event-card" onclick="openPDF('event reports/BEYOND BOOKS EVENT.pdf')">
+                <div class="event-card" data-year="2025-2026" data-category="personality" onclick="openPDF('event reports/BEYOND BOOKS EVENT 2025-2026.pdf')">
                     <div class="event-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                         <i class="fas fa-book-open"></i>
                         <span class="event-badge">Seminar</span>
                     </div>
                     <div class="event-content">
+                        <span class="event-category category-personality">Personality Development</span>
                         <div class="event-date">
                             <i class="fas fa-calendar-alt"></i>
-                            <span>2025</span>
+                            <span>2025-2026</span>
                         </div>
                         <h3 class="event-title">Beyond Books Event</h3>
                         <p class="event-description">
@@ -394,20 +540,21 @@
                     </div>
                 </div>
 
-                <!-- Monthly Meets Card -->
-                <div class="event-card monthly-meet-card" onclick="showMonthlyMeets()">
+                <!-- Monthly Meets Card 2025-2026 -->
+                <div class="event-card monthly-meet-card" data-year="2025-2026" data-category="networking" onclick="showMonthlyMeets2025()">
                     <div class="event-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
                         <i class="fas fa-users"></i>
                         <span class="event-badge">Regular</span>
                     </div>
                     <div class="event-content">
+                        <span class="event-category category-networking">Networking</span>
                         <div class="event-date">
                             <i class="fas fa-calendar-check"></i>
-                            <span>Monthly Series</span>
+                            <span>Monthly Series 2025-2026</span>
                         </div>
                         <h3 class="event-title">Monthly Meets</h3>
                         <p class="event-description">
-                            Regular monthly gatherings bringing together our community for knowledge sharing, networking, and collaborative learning experiences. Browse reports from different months.
+                            Regular monthly gatherings bringing together our community for knowledge sharing, networking, and collaborative learning experiences.
                         </p>
                         <div class="event-footer">
                             <div class="event-action">
@@ -423,29 +570,55 @@
         </div>
     </section>
 
-    <!-- Monthly Meets Modal -->
-    <div id="monthlyMeetsModal" class="modal">
+    <!-- Monthly Meets Modal 2024-2025 -->
+    <div id="monthlyMeetsModal2024" class="modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <button class="modal-close" onclick="closeModal2024()">&times;</button>
             <div class="modal-header">
-                <h2>Monthly Meet Reports</h2>
+                <h2>Monthly Meet Reports 2024-2025</h2>
             </div>
             <ul class="report-list">
-                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/September MM.pdf')">
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/August MM 2024.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">August 2024</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/October MM 2024.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">October 2024</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Monthly Meets Modal 2025-2026 -->
+    <div id="monthlyMeetsModal2025" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal2025()">&times;</button>
+            <div class="modal-header">
+                <h2>Monthly Meet Reports 2025-2026</h2>
+            </div>
+            <ul class="report-list">
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/September MM 2025.pdf')">
                     <div class="report-info">
                         <i class="fas fa-file-pdf"></i>
                         <span class="report-month">September 2025</span>
                     </div>
                     <i class="fas fa-chevron-right report-arrow"></i>
                 </li>
-                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/November MM.pdf')">
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/November MM 2025.pdf')">
                     <div class="report-info">
                         <i class="fas fa-file-pdf"></i>
                         <span class="report-month">November 2025</span>
                     </div>
                     <i class="fas fa-chevron-right report-arrow"></i>
                 </li>
-                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/December MM.pdf')">
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/December MM 2025.pdf')">
                     <div class="report-info">
                         <i class="fas fa-file-pdf"></i>
                         <span class="report-month">December 2025</span>
@@ -529,29 +702,81 @@
             window.open(pdfPath, '_blank');
         }
 
-        // Show monthly meets modal
-        function showMonthlyMeets() {
-            document.getElementById('monthlyMeetsModal').classList.add('active');
+        // Show monthly meets modal for 2024-2025
+        function showMonthlyMeets2024() {
+            document.getElementById('monthlyMeetsModal2024').classList.add('active');
         }
 
-        // Close modal
-        function closeModal() {
-            document.getElementById('monthlyMeetsModal').classList.remove('active');
+        // Show monthly meets modal for 2025-2026
+        function showMonthlyMeets2025() {
+            document.getElementById('monthlyMeetsModal2025').classList.add('active');
+        }
+
+        // Close modal 2024
+        function closeModal2024() {
+            document.getElementById('monthlyMeetsModal2024').classList.remove('active');
+        }
+
+        // Close modal 2025
+        function closeModal2025() {
+            document.getElementById('monthlyMeetsModal2025').classList.remove('active');
         }
 
         // Close modal when clicking outside
         window.onclick = function(event) {
-            const modal = document.getElementById('monthlyMeetsModal');
-            if (event.target === modal) {
-                closeModal();
+            const modal2024 = document.getElementById('monthlyMeetsModal2024');
+            const modal2025 = document.getElementById('monthlyMeetsModal2025');
+            if (event.target === modal2024) {
+                closeModal2024();
+            }
+            if (event.target === modal2025) {
+                closeModal2025();
             }
         }
 
         // Close modal on Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                closeModal();
+                closeModal2024();
+                closeModal2025();
             }
+        });
+
+        // Filter events by year
+        function filterEvents(year) {
+            const eventCards = document.querySelectorAll('.event-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.trim() === year) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Filter cards
+            eventCards.forEach(card => {
+                const cardYear = card.getAttribute('data-year');
+                if (cardYear === year) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Initialize with 2025-2026 filter (default)
+        document.addEventListener('DOMContentLoaded', function() {
+            filterEvents('2025-2026');
         });
     </script>
 </body>
