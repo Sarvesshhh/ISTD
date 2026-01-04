@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - ISTD STUDENT CHAPTER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.jpeg">
+    
+    <style>
+        .events-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a2d52 100%);
+            padding: 6rem 0 4rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .events-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: var(--font-bold);
+        }
+
+        .events-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .events-section {
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition-medium);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .event-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-image i {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .event-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .event-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: var(--font-semibold);
+            z-index: 1;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: var(--font-medium);
+        }
+
+        .event-title {
+            font-size: 1.5rem;
+            font-weight: var(--font-bold);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .event-description {
+            color: var(--dark-gray);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .event-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .event-action {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: var(--font-medium);
+            font-size: 0.95rem;
+        }
+
+        /* Monthly Meets Styles */
+        .monthly-meet-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .monthly-meet-card .event-content {
+            min-height: 200px;
+        }
+
+        .monthly-meet-card .event-title,
+        .monthly-meet-card .event-description {
+            color: white;
+        }
+
+        .monthly-meet-card .event-date {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .monthly-meet-card .event-footer {
+            border-top-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .monthly-meet-card .event-action {
+            color: white;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all var(--transition-fast);
+        }
+
+        .modal-close:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        .modal-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-right: 2rem;
+        }
+
+        .report-list {
+            list-style: none;
+        }
+
+        .report-item {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: var(--light-gray);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .report-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .report-item i {
+            margin-right: 0.75rem;
+        }
+
+        .report-info {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .report-month {
+            font-weight: var(--font-semibold);
+            font-size: 1.1rem;
+        }
+
+        .report-arrow {
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .events-hero h1 {
+                font-size: 2rem;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <h2><img src="logo istd.png" width="30px">ISTD SVCE</h2>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="events.html" class="nav-link active">Events</a></li>
+                    <li><a href="office-bearers.html" class="nav-link">Team</a></li>
+                </ul>
+                
+                <!-- Login/Register Button -->
+                <div class="nav-auth">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRsC36hTGEc2zp6ab-bjyHrwX-BSzjoa00LbCmTZGz6ORlgA/viewform?usp=sharing&ouid=100901410467440819661" target="_blank">
+                        <button class="auth-btn">Login / Register</button>
+                    </a> 
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Events Hero Section -->
+    <section class="events-hero">
+        <div class="container">
+            <h1>Our Events</h1>
+            <p>Explore our past events, workshops, and monthly meetups that shape our community</p>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <div class="events-grid">
+                
+                <!-- Event 1: Data Analyst Online Event -->
+                <div class="event-card" onclick="openPDF('event reports/DATA ANALYST ONLINE EVENT.pdf')">
+                    <div class="event-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="event-badge">Workshop</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2025</span>
+                        </div>
+                        <h3 class="event-title">Data Analyst Online Event</h3>
+                        <p class="event-description">
+                            An intensive workshop on data analytics covering modern tools, techniques, and real-world applications. Students learned essential skills for data-driven decision making.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>View Report</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2: Beyond Books Event -->
+                <div class="event-card" onclick="openPDF('event reports/BEYOND BOOKS EVENT.pdf')">
+                    <div class="event-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-book-open"></i>
+                        <span class="event-badge">Seminar</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2025</span>
+                        </div>
+                        <h3 class="event-title">Beyond Books Event</h3>
+                        <p class="event-description">
+                            A transformative event focusing on practical skills beyond academics, featuring industry experts sharing insights on career development and life skills.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>View Report</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Meets Card -->
+                <div class="event-card monthly-meet-card" onclick="showMonthlyMeets()">
+                    <div class="event-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <i class="fas fa-users"></i>
+                        <span class="event-badge">Regular</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Monthly Series</span>
+                        </div>
+                        <h3 class="event-title">Monthly Meets</h3>
+                        <p class="event-description">
+                            Regular monthly gatherings bringing together our community for knowledge sharing, networking, and collaborative learning experiences. Browse reports from different months.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-folder-open"></i>
+                                <span>View All Reports</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Meets Modal -->
+    <div id="monthlyMeetsModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <h2>Monthly Meet Reports</h2>
+            </div>
+            <ul class="report-list">
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/September MM.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">September 2025</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/November MM.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">November 2025</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/December MM.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">December 2025</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3>ISTD SVCE</h3>
+                    <p>Empowering learners worldwide with quality training and development programs.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/istd_svce/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/istd-student-chapter-svce-281b53378" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="office-bearers.html">Our Team</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Get In Touch</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>istd@svce.ac.in</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 89409 63521</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>SVCE, Sriperumbudur</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 ISTD SVCE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Open PDF in new tab
+        function openPDF(pdfPath) {
+            window.open(pdfPath, '_blank');
+        }
+
+        // Show monthly meets modal
+        function showMonthlyMeets() {
+            document.getElementById('monthlyMeetsModal').classList.add('active');
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('monthlyMeetsModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('monthlyMeetsModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
