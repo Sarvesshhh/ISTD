@@ -227,6 +227,62 @@
             color: white;
         }
 
+        .event-reports-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .event-reports-card .event-title,
+        .event-reports-card .event-description {
+            color: white;
+        }
+
+        .event-reports-card .event-date {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .event-reports-card .event-footer {
+            border-top-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .event-reports-card .event-action {
+            color: white;
+        }
+
+        .annual-report-card {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .annual-report-card .event-title,
+        .annual-report-card .event-description {
+            color: white;
+        }
+
+        .annual-report-card .event-date {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .annual-report-card .event-footer {
+            border-top-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .annual-report-card .event-action {
+            color: white;
+        }
+
+        .report-item .report-category {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            margin-left: 0.75rem;
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        .report-item:hover .report-category {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
         /* Modal Styles */
         .modal {
             display: none;
@@ -250,7 +306,7 @@
             background: white;
             padding: 2rem;
             border-radius: var(--radius-lg);
-            max-width: 600px;
+            max-width: 700px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
@@ -334,11 +390,14 @@
             display: flex;
             align-items: center;
             flex: 1;
+            flex-wrap: wrap;
+            gap: 0.35rem;
         }
 
         .report-month {
             font-weight: var(--font-semibold);
-            font-size: 1.1rem;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .report-arrow {
@@ -369,9 +428,9 @@
                 <!-- Navigation Menu -->
                 <ul class="nav-menu">
                     <li><a href="/" class="nav-link">Home</a></li>
-                    <li><a href="/about" class="nav-link">About</a></li>
-                    <li><a href="/events" class="nav-link active">Events</a></li>
-                    <li><a href="/office-bearers" class="nav-link">Team</a></li>
+                    <li><a href="/about.html" class="nav-link">About</a></li>
+                    <li><a href="/events.html" class="nav-link active">Events</a></li>
+                    <li><a href="/office-bearers.html" class="nav-link">Team</a></li>
                 </ul>
                 
                 <!-- Login/Register Button -->
@@ -409,57 +468,6 @@
             <div class="events-grid">
                 
                 <!-- 2024-2025 Events -->
-                <!-- Event: Building and Leveraging a Personal Network -->
-                <div class="event-card" data-year="2024-2025" data-category="networking" onclick="openPDF('event reports/Building and Leveraging a Personal Network with Workplace Etiquette 2024-2025.pdf')">
-                    <div class="event-image" style="background: linear-gradient(135deg, #396afc 0%, #2948ff 100%);">
-                        <i class="fas fa-handshake"></i>
-                        <span class="event-badge">Workshop</span>
-                    </div>
-                    <div class="event-content">
-                        <span class="event-category category-networking">Networking</span>
-                        <div class="event-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>2024-2025</span>
-                        </div>
-                        <h3 class="event-title">Building and Leveraging a Personal Network</h3>
-                        <p class="event-description">
-                            A comprehensive workshop on building professional networks and mastering workplace etiquette for career success.
-                        </p>
-                        <div class="event-footer">
-                            <div class="event-action">
-                                <i class="fas fa-file-pdf"></i>
-                                <span>View Report</span>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event: SpeakUp Showdown -->
-                <div class="event-card" data-year="2024-2025" data-category="personality" onclick="openPDF('event reports/SpeakUp Showdown report 2024-2025.pdf')">
-                    <div class="event-image" style="background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);">
-                        <i class="fas fa-microphone"></i>
-                        <span class="event-badge">Competition</span>
-                    </div>
-                    <div class="event-content">
-                        <span class="event-category category-personality">Personality Development</span>
-                        <div class="event-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>2024-2025</span>
-                        </div>
-                        <h3 class="event-title">SpeakUp Showdown</h3>
-                        <p class="event-description">
-                            An engaging public speaking competition designed to enhance communication skills and build confidence in expressing ideas effectively.
-                        </p>
-                        <div class="event-footer">
-                            <div class="event-action">
-                                <i class="fas fa-file-pdf"></i>
-                                <span>View Report</span>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Monthly Meets Card 2024-2025 -->
                 <div class="event-card monthly-meet-card" data-year="2024-2025" data-category="networking" onclick="showMonthlyMeets2024()">
@@ -487,59 +495,59 @@
                     </div>
                 </div>
 
+                <!-- Event Reports Card 2024-2025 -->
+                <div class="event-card event-reports-card" data-year="2024-2025" data-category="networking" onclick="showEventReports2024()">
+                    <div class="event-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-calendar-day"></i>
+                        <span class="event-badge">Events</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category category-networking">All Categories</span>
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Academic Year 2024-2025</span>
+                        </div>
+                        <h3 class="event-title">Event Reports</h3>
+                        <p class="event-description">
+                            Browse reports from our major events and competitions conducted during the academic year.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-folder-open"></i>
+                                <span>View Events</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annual Report Card 2024-2025 -->
+                <div class="event-card annual-report-card" data-year="2024-2025" data-category="networking" onclick="showAnnualReport2024()">
+                    <div class="event-image" style="background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="event-badge">Annual</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category category-networking">Year in Review</span>
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2024-2025</span>
+                        </div>
+                        <h3 class="event-title">Annual Report</h3>
+                        <p class="event-description">
+                            A comprehensive overview of ISTD SVCE activities, achievements, and milestones throughout the academic year.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>View Report</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 2025-2026 Events -->
-                <!-- Event 1: Data Analyst Online Event -->
-                <div class="event-card" data-year="2025-2026" data-category="career" onclick="openPDF('event reports/DATA ANALYST ONLINE EVENT 2025-2026.pdf')">
-                    <div class="event-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <i class="fas fa-chart-line"></i>
-                        <span class="event-badge">Workshop</span>
-                    </div>
-                    <div class="event-content">
-                        <span class="event-category category-career">Career Development</span>
-                        <div class="event-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>2025-2026</span>
-                        </div>
-                        <h3 class="event-title">Data Analyst Online Event</h3>
-                        <p class="event-description">
-                            An intensive workshop on data analytics covering modern tools, techniques, and real-world applications. Students learned essential skills for data-driven decision making.
-                        </p>
-                        <div class="event-footer">
-                            <div class="event-action">
-                                <i class="fas fa-file-pdf"></i>
-                                <span>View Report</span>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event 2: Beyond Books Event -->
-                <div class="event-card" data-year="2025-2026" data-category="personality" onclick="openPDF('event reports/BEYOND BOOKS EVENT 2025-2026.pdf')">
-                    <div class="event-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <i class="fas fa-book-open"></i>
-                        <span class="event-badge">Seminar</span>
-                    </div>
-                    <div class="event-content">
-                        <span class="event-category category-personality">Personality Development</span>
-                        <div class="event-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>2025-2026</span>
-                        </div>
-                        <h3 class="event-title">Beyond Books Event</h3>
-                        <p class="event-description">
-                            A transformative event focusing on practical skills beyond academics, featuring industry experts sharing insights on career development and life skills.
-                        </p>
-                        <div class="event-footer">
-                            <div class="event-action">
-                                <i class="fas fa-file-pdf"></i>
-                                <span>View Report</span>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Monthly Meets Card 2025-2026 -->
                 <div class="event-card monthly-meet-card" data-year="2025-2026" data-category="networking" onclick="showMonthlyMeets2025()">
                     <div class="event-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
@@ -560,6 +568,58 @@
                             <div class="event-action">
                                 <i class="fas fa-folder-open"></i>
                                 <span>View All Reports</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Reports Card 2025-2026 -->
+                <div class="event-card event-reports-card" data-year="2025-2026" data-category="career" onclick="showEventReports2025()">
+                    <div class="event-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-calendar-day"></i>
+                        <span class="event-badge">Events</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category category-career">All Categories</span>
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Academic Year 2025-2026</span>
+                        </div>
+                        <h3 class="event-title">Event Reports</h3>
+                        <p class="event-description">
+                            Browse reports from our flagship workshops and seminars — from career development sessions to personality and networking events.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-folder-open"></i>
+                                <span>View Events</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annual Report Card 2025-2026 -->
+                <div class="event-card annual-report-card" data-year="2025-2026" data-category="career" onclick="showAnnualReport2025()">
+                    <div class="event-image" style="background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="event-badge">Annual</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category category-career">Year in Review</span>
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2025-2026</span>
+                        </div>
+                        <h3 class="event-title">Annual Report</h3>
+                        <p class="event-description">
+                            A comprehensive overview of ISTD SVCE activities, achievements, and milestones throughout the academic year.
+                        </p>
+                        <div class="event-footer">
+                            <div class="event-action">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>View Report</span>
                             </div>
                             <i class="fas fa-arrow-right"></i>
                         </div>
@@ -596,6 +656,53 @@
         </div>
     </div>
 
+    <!-- Event Reports Modal 2024-2025 -->
+    <div id="eventReportsModal2024" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEventReports2024()">&times;</button>
+            <div class="modal-header">
+                <h2>Event Reports 2024-2025</h2>
+            </div>
+            <ul class="report-list">
+                <li class="report-item" onclick="openPDF('event reports/Building and Leveraging a Personal Network with Workplace Etiquette 2024-2025.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">Event 1 – Building and Leveraging a Personal Network</span>
+                        <span class="report-category">Networking</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/SpeakUp Showdown report 2024-2025.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">Event 2 – SpeakUp Showdown</span>
+                        <span class="report-category">Personality Development</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Annual Report Modal 2024-2025 -->
+    <div id="annualReportModal2024" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAnnualReport2024()">&times;</button>
+            <div class="modal-header">
+                <h2>Annual Report 2024-2025</h2>
+            </div>
+            <ul class="report-list">
+                <li class="report-item" onclick="openPDF('event reports/ISTD Annual Report (AY 2024-2025).pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">ISTD SVCE Annual Report 2024-2025</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <!-- Monthly Meets Modal 2025-2026 -->
     <div id="monthlyMeetsModal2025" class="modal">
         <div class="modal-content">
@@ -604,6 +711,13 @@
                 <h2>Monthly Meet Reports 2025-2026</h2>
             </div>
             <ul class="report-list">
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/AUG_2025 Monthly Meeting.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">August 2025</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
                 <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/September MM 2025.pdf')">
                     <div class="report-info">
                         <i class="fas fa-file-pdf"></i>
@@ -622,6 +736,91 @@
                     <div class="report-info">
                         <i class="fas fa-file-pdf"></i>
                         <span class="report-month">December 2025</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/JAN_2026 Monthly Meeting .pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">January 2026</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/Monthly meet reports/JULY_2026 Monthly Meeting.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">July 2026</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Event Reports Modal 2025-2026 -->
+    <div id="eventReportsModal2025" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEventReports2025()">&times;</button>
+            <div class="modal-header">
+                <h2>Event Reports 2025-2026</h2>
+            </div>
+            <ul class="report-list">
+                <li class="report-item" onclick="openPDF('event reports/E-1 ISTD Inaugration for 2025-26 batch report.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">Event 1 – Inauguration: Presenting You – The Art of Self-Marketing</span>
+                        <span class="report-category">Career Development</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/Event-2 (Structuring Success_ As a Data Analyst).pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">Event 2 – Structuring Success: As a Data Analyst</span>
+                        <span class="report-category">Career Development</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/Event-3 (Beyond Books).pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">Event 3 – Beyond Books: The Psychology of Success</span>
+                        <span class="report-category">Personality Development</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/Event-4 (Recruitment Unplugged).docx.pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">Event 4 – Recruitment Unplugged</span>
+                        <span class="report-category">Networking</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+                <li class="report-item" onclick="openPDF('event reports/Event-5 (Leadership Undo).pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">Event 5 – Leadership Undo</span>
+                        <span class="report-category">Personality Development</span>
+                    </div>
+                    <i class="fas fa-chevron-right report-arrow"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Annual Report Modal 2025-2026 -->
+    <div id="annualReportModal2025" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAnnualReport2025()">&times;</button>
+            <div class="modal-header">
+                <h2>Annual Report 2025-2026</h2>
+            </div>
+            <ul class="report-list">
+                <li class="report-item" onclick="openPDF('event reports/ISTD ANNUAL REPORT (AY 2025-26).pdf')">
+                    <div class="report-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="report-month">ISTD SVCE Annual Report 2025-2026</span>
                     </div>
                     <i class="fas fa-chevron-right report-arrow"></i>
                 </li>
@@ -648,9 +847,9 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/events">Events</a></li>
-                        <li><a href="/office-bearers">Our Team</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/events.html">Events</a></li>
+                        <li><a href="/office-bearers.html">Our Team</a></li>
                     </ul>
                 </div>
                 
@@ -699,7 +898,7 @@
 
         // Open PDF in new tab
         function openPDF(pdfPath) {
-            window.open(pdfPath, '_blank');
+            window.open(encodeURI(pdfPath), '_blank');
         }
 
         // Show monthly meets modal for 2024-2025
@@ -722,15 +921,67 @@
             document.getElementById('monthlyMeetsModal2025').classList.remove('active');
         }
 
+        // Show event reports modal for 2024-2025
+        function showEventReports2024() {
+            document.getElementById('eventReportsModal2024').classList.add('active');
+        }
+
+        function closeEventReports2024() {
+            document.getElementById('eventReportsModal2024').classList.remove('active');
+        }
+
+        // Show annual report modal for 2024-2025
+        function showAnnualReport2024() {
+            document.getElementById('annualReportModal2024').classList.add('active');
+        }
+
+        function closeAnnualReport2024() {
+            document.getElementById('annualReportModal2024').classList.remove('active');
+        }
+
+        // Show event reports modal for 2025-2026
+        function showEventReports2025() {
+            document.getElementById('eventReportsModal2025').classList.add('active');
+        }
+
+        function closeEventReports2025() {
+            document.getElementById('eventReportsModal2025').classList.remove('active');
+        }
+
+        // Show annual report modal for 2025-2026
+        function showAnnualReport2025() {
+            document.getElementById('annualReportModal2025').classList.add('active');
+        }
+
+        function closeAnnualReport2025() {
+            document.getElementById('annualReportModal2025').classList.remove('active');
+        }
+
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modal2024 = document.getElementById('monthlyMeetsModal2024');
             const modal2025 = document.getElementById('monthlyMeetsModal2025');
+            const eventReportsModal2024 = document.getElementById('eventReportsModal2024');
+            const annualReportModal2024 = document.getElementById('annualReportModal2024');
+            const eventReportsModal = document.getElementById('eventReportsModal2025');
+            const annualReportModal = document.getElementById('annualReportModal2025');
             if (event.target === modal2024) {
                 closeModal2024();
             }
             if (event.target === modal2025) {
                 closeModal2025();
+            }
+            if (event.target === eventReportsModal2024) {
+                closeEventReports2024();
+            }
+            if (event.target === annualReportModal2024) {
+                closeAnnualReport2024();
+            }
+            if (event.target === eventReportsModal) {
+                closeEventReports2025();
+            }
+            if (event.target === annualReportModal) {
+                closeAnnualReport2025();
             }
         }
 
@@ -739,6 +990,10 @@
             if (event.key === 'Escape') {
                 closeModal2024();
                 closeModal2025();
+                closeEventReports2024();
+                closeAnnualReport2024();
+                closeEventReports2025();
+                closeAnnualReport2025();
             }
         });
 
